@@ -17,7 +17,7 @@ The short sequence borrows the clarity of https://jamesclear.com/atomic-habits: 
 
 Praise cards contain all three full endorsements, supplied on the promotional page of the owner's reference file and checked against the public NYU Press listing. Kelly J. Baker's final sentence follows the public listing's “A necessary read” wording (the supplied promotional page says “A necessary book”). Quotes, names, and attribution have not been humanized. No interior manuscript content is published. The CrimeReads feature links to the adapted excerpt and uses an original short summary rather than reproducing the article.
 
-Praise uses body-size serif text and compact padding. On tablets, two cards sit above a full-width third card so the complete quotes have room to wrap without forming tall, narrow columns. Phones use one column; larger screens use three.
+Praise uses body-size italic serif text and compact padding. The text has no enclosing quotation marks; each card retains its decorative opening quote above the text. Attribution book titles are italic, while reviewer names and “Author of” stay in regular type. On tablets, two cards sit above a full-width third card so the complete quotes have room to wrap without forming tall, narrow columns. Phones use one column; larger screens use three.
 
 The Humanizer and Constrained Humanization Editing skills were applied only to assistant-authored website copy: metadata, the introduction, supporting summaries, and generic headings/link labels. Book and article titles, author names, dates, URLs, publisher facts, and endorsement wording remain sourced. The owner's requested slogan removals are deliberate; do not restore them. The footer uses the cover-style `Body + Blood` title.
 

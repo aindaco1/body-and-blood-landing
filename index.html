@@ -34,8 +34,8 @@ layout: default
     {% for praise in book.praise %}
     <figure class="praise-card">
       <span class="quote-mark" aria-hidden="true">“</span>
-      <blockquote><p>“{{ praise.quote }}”</p></blockquote>
-      <figcaption><strong>{{ praise.name }}</strong><span>{{ praise.credit }}</span></figcaption>
+      <blockquote><p>{{ praise.quote }}</p></blockquote>
+      <figcaption><strong>{{ praise.name }}</strong><span>Author of <cite>{{ praise.credit | remove_first: 'Author of ' }}</cite></span></figcaption>
     </figure>
     {% endfor %}
   </div>
