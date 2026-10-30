@@ -4,7 +4,7 @@ Static book landing page built on the same Jekyll / GitHub Pages architecture as
 
 - Keep it KISS and DRY: Liquid, YAML, SCSS, framework-free JavaScript. No application server or analytics.
 - `_data/book.yml` owns public book copy, praise, author names, and external links.
-- **Never copy, commit, embed, link, upload, or publish the full book PDF, interior page images, or extracted manuscript text.** The owner's PDF is a local visual reference only. It must stay outside this project. Public book-cover artwork is allowed.
+- **Never copy, commit, embed, link, upload, or publish the full book PDF, interior page images, or extracted manuscript text.** The owner's PDF must stay outside this project. Public book-cover artwork and the three promotional endorsements explicitly requested by the owner are allowed.
 - Run `npm test` before publishing. The publish guard checks filenames, PDF signatures, allowed output paths, and embeds.
 - All purchase links and reading links work without JavaScript. No automatic third-party embeds.
 - The GIF is purely decorative. Honor reduced motion, Save-Data, hidden tabs, and the pause button. Typography never animates.

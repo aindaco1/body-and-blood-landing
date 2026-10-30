@@ -15,7 +15,9 @@ The short sequence borrows the clarity of https://jamesclear.com/atomic-habits: 
 - Retailer URLs were supplied by the owner; the publisher is the authority for book metadata. Prices are intentionally omitted.
 - The supplied Lindsey Sells Books listing was reviewed but omitted: it attributes a four-author book to one author and shows inconsistent ratings. It is not used as a source of praise.
 
-Praise cards contain short, exact fragments from publisher-listed endorsements (21 quoted words total), with author attribution and a link to the complete praise. The CrimeReads feature links to the adapted excerpt and uses an original short summary rather than reproducing the article. No interior manuscript content is published.
+Praise cards contain all three full endorsements, supplied on the promotional page of the owner's reference file and checked against the public NYU Press listing. Kelly J. Baker's final sentence follows the public listing's “A necessary read” wording (the supplied promotional page says “A necessary book”). Quotes, names, and attribution have not been humanized. No interior manuscript content is published. The CrimeReads feature links to the adapted excerpt and uses an original short summary rather than reproducing the article.
+
+The Humanizer and Constrained Humanization Editing skills were applied only to assistant-authored website copy: metadata, the introduction, supporting summaries, and generic headings/link labels. Book and article titles, author names, dates, URLs, publisher facts, and endorsement wording remain sourced. The owner's requested slogan removals are deliberate; do not restore them. The footer uses the cover-style `Body + Blood` title.
 
 ## Artwork
 
@@ -35,4 +37,4 @@ Built-in `image_gen` tool, `precise-object-edit`:
 
 ## Private reference boundary
 
-The supplied 252-page review PDF was inspected locally for cover and typography only. It remains outside the project. No PDF, page image, manuscript text, extracted embedded font, or review-copy contact sheet belongs in the repository. Git ignores PDF extensions and the build guard rejects both PDF filenames and PDF signatures, including renamed files. The `_site` allowlist excludes documentation, tools, dependencies, source references, and temporary media.
+The supplied 252-page review PDF was inspected locally for cover and typography. Its promotional page also supplies the full endorsements requested by the owner. The file remains outside the project. No PDF, page image, interior manuscript text, extracted embedded font, or review-copy contact sheet belongs in the repository. Git ignores PDF extensions and the build guard rejects both PDF filenames and PDF signatures, including renamed files. The `_site` allowlist excludes documentation, tools, dependencies, source references, and temporary media.

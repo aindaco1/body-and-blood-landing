@@ -57,7 +57,6 @@ h1 > span:not(.sr-only) { display: block; }
 .text-link { font-size: .88rem; border-bottom: 1px solid rgba(255, 244, 228, .55); padding-bottom: 7px; display: inline-block; }
 .text-link span { display: inline-block; margin-left: 16px; }
 .text-link:hover { border-color: $paper; }
-.hero-foot { border-top: 1px solid $line; max-width: 1152px; margin-inline: auto; width: 100%; padding: 20px 0 25px; display: flex; justify-content: space-between; font-size: .73rem; letter-spacing: .06em; }
 main > .section { position: relative; }
 main { background: linear-gradient(180deg, transparent 650px, rgba(24, 4, 5, .93) 1100px, rgba(22, 4, 5, .97) 70%, rgba(34, 3, 6, .75)); }
 .about { display: grid; grid-template-columns: .85fr 1.15fr; gap: 105px; align-items: center; }
@@ -71,11 +70,12 @@ main { background: linear-gradient(180deg, transparent 650px, rgba(24, 4, 5, .93
 .about-copy .text-link { margin-top: 24px; }
 .section-heading { margin-bottom: 42px; }
 .section-heading .eyebrow { color: $muted; margin-bottom: 15px; }
+.section-heading .section-label { font-family: 'Jost', sans-serif; margin-bottom: 0; }
 .praise { padding-top: 32px; }
 .praise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .praise-card { padding: 30px; border: 1px solid $line; background: rgba(71, 17, 20, .28); display: flex; flex-direction: column; }
 .quote-mark { font-family: 'Garamond', Georgia, serif; font-size: 4rem; line-height: .8; color: #c89686; }
-blockquote { margin: 12px 0 32px; font-family: 'Garamond', Georgia, serif; font-size: 1.95rem; line-height: 1.2; }
+blockquote { margin: 12px 0 32px; font-family: 'Garamond', Georgia, serif; font-size: 1.3rem; line-height: 1.45; }
 figcaption { margin-top: auto; }
 figcaption strong { display: block; font-weight: 400; font-size: .9rem; }
 figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 5px; }
@@ -108,7 +108,6 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
 .podcast-card .text-link { margin-top: 25px; font-size: .8rem; }
 .buy { text-align: center; padding-block: 100px 80px; border-top: 1px solid $line; background: linear-gradient(180deg, rgba(77, 8, 16, .25), rgba(82, 3, 17, .55)); }
 .buy h2 { font-size: clamp(3.7rem, 6vw, 5.5rem); margin-top: 22px; }
-.buy-intro { font-family: 'Garamond', Georgia, serif; font-size: 1.5rem; line-height: 1.35; color: #eed5cc; margin-top: 22px; }
 .retailers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; }
 .retailer { display: grid; grid-template-columns: 1fr auto; gap: 4px; text-align: left; padding: 22px 24px; border: 1px solid rgba(255, 241, 222, .5); }
 .retailer:hover { background: $paper; color: #31090a; }
@@ -144,7 +143,7 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .about { gap: 50px; grid-template-columns: .8fr 1.2fr; }
   .book-display { padding-inline: 12px; }
   .praise-card { padding: 24px; }
-  blockquote { font-size: 1.7rem; }
+  blockquote { font-size: 1.2rem; }
   .excerpt-feature { padding: 35px; gap: 35px; }
   .reading-grid { gap: 35px; }
 }
@@ -166,7 +165,6 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .title-cross { margin-block: 21px; }
   .hero-subtitle { margin-block: 28px; font-size: 1.07rem; }
   .hero-actions { flex-direction: column; gap: 20px; }
-  .hero-foot { font-size: .65rem; padding-block: 18px; }
   .hero-inner { padding-bottom: 34px; }
   main { background: linear-gradient(180deg, transparent 600px, rgba(24, 4, 5, .94) 1050px, rgba(22, 4, 5, .97) 80%, rgba(34, 3, 6, .8)); }
   .about { grid-template-columns: 1fr; gap: 50px; }
@@ -179,7 +177,7 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .praise-grid { grid-template-columns: 1fr; gap: 12px; }
   .praise-card { padding: 28px; }
   .quote-mark { font-size: 3.1rem; }
-  blockquote { font-size: 1.9rem; margin: 9px 0 25px; }
+  blockquote { font-size: 1.3rem; margin: 9px 0 25px; }
   .reading { padding-top: 16px; }
   .excerpt-feature { grid-template-columns: 1fr; padding: 28px; gap: 35px; }
   .excerpt-meta { display: grid; grid-template-columns: 1fr auto; align-items: end; }
