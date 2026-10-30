@@ -73,9 +73,9 @@ main { background: linear-gradient(180deg, transparent 650px, rgba(24, 4, 5, .93
 .section-heading .section-label { font-family: 'Jost', sans-serif; margin-bottom: 0; }
 .praise { padding-top: 32px; }
 .praise-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.praise-card { padding: 30px; border: 1px solid $line; background: rgba(71, 17, 20, .28); display: flex; flex-direction: column; }
-.quote-mark { font-family: 'Garamond', Georgia, serif; font-size: 4rem; line-height: .8; color: #c89686; }
-blockquote { margin: 12px 0 32px; font-family: 'Garamond', Georgia, serif; font-size: 1.3rem; line-height: 1.45; }
+.praise-card { padding: 24px; border: 1px solid $line; background: rgba(71, 17, 20, .28); display: flex; flex-direction: column; }
+.quote-mark { font-family: 'Garamond', Georgia, serif; font-size: 2.75rem; line-height: .8; color: #c89686; }
+blockquote { margin: 8px 0 22px; font-family: 'Garamond', Georgia, serif; font-size: 1.0625rem; line-height: 1.45; }
 figcaption { margin-top: auto; }
 figcaption strong { display: block; font-weight: 400; font-size: .9rem; }
 figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 5px; }
@@ -127,6 +127,11 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   input, textarea { cursor: text; }
 }
 @media (min-width: 1600px) { .atmosphere img { object-position: 50% 50%; } }
+@media (min-width: 701px) and (max-width: 1100px) {
+  .praise-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .praise-card:last-child { grid-column: 1 / -1; }
+  blockquote { font-size: 1rem; }
+}
 @media (min-width: 701px) and (max-height: 820px) {
   .hero { padding-top: 115px; }
   .hero-announcement { margin-bottom: 16px; }
@@ -142,8 +147,6 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .wrap { width: calc(100% - 64px); }
   .about { gap: 50px; grid-template-columns: .8fr 1.2fr; }
   .book-display { padding-inline: 12px; }
-  .praise-card { padding: 24px; }
-  blockquote { font-size: 1.2rem; }
   .excerpt-feature { padding: 35px; gap: 35px; }
   .reading-grid { gap: 35px; }
 }
@@ -175,9 +178,7 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .praise { padding-top: 16px; }
   .section-heading { margin-bottom: 30px; }
   .praise-grid { grid-template-columns: 1fr; gap: 12px; }
-  .praise-card { padding: 28px; }
-  .quote-mark { font-size: 3.1rem; }
-  blockquote { font-size: 1.3rem; margin: 9px 0 25px; }
+  .praise-card { padding: 22px; }
   .reading { padding-top: 16px; }
   .excerpt-feature { grid-template-columns: 1fr; padding: 28px; gap: 35px; }
   .excerpt-meta { display: grid; grid-template-columns: 1fr auto; align-items: end; }
