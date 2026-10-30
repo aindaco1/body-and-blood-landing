@@ -55,7 +55,17 @@ layout: default
       <a class="essay" href="{{ item.url }}"><div><p class="essay-meta">{{ item.label }} <span aria-hidden="true">/</span> {{ item.author }}</p><h3>{{ item.title }}</h3></div><span aria-hidden="true">↗</span></a>
       {% endfor %}
     </div>
-    <a class="podcast-card" href="{{ book.podcast.url }}"><span class="podcast-icon" aria-hidden="true">▷</span><p class="eyebrow">{{ book.podcast.label }}</p><h3>{{ book.podcast.title }}</h3><p>{{ book.podcast.description }}</p><span class="text-link">Listen to the episode <span aria-hidden="true">↗</span></span></a>
+    <div class="podcast-list">
+      {% for podcast in book.podcasts %}
+      <a class="podcast-card" href="{{ podcast.url }}">
+        <p class="eyebrow">{{ podcast.label }}</p>
+        <h3>{{ podcast.title }}</h3>
+        {% if podcast.date or podcast.duration %}<p class="podcast-meta">{{ podcast.date }}{% if podcast.date and podcast.duration %} · {% endif %}{% if podcast.duration %}{{ podcast.duration }} <span class="sr-only">minutes</span>{% endif %}</p>{% endif %}
+        <p class="podcast-description">{{ podcast.description }}</p>
+        <span class="text-link">{{ podcast.link_label }} <span aria-hidden="true">↗</span></span>
+      </a>
+      {% endfor %}
+    </div>
   </div>
 </section>
 

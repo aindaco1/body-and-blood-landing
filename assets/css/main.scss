@@ -92,20 +92,21 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
 .excerpt-subtitle { font-family: 'Garamond', Georgia, serif; font-size: 1.5rem; line-height: 1.25; margin-top: 8px; }
 .excerpt-copy > p:not(.excerpt-subtitle) { font-size: .96rem; margin-top: 22px; color: #5b3030; }
 .excerpt-copy .text-link { border-color: #633334; margin-top: 24px; }
-.reading-grid { display: grid; grid-template-columns: 1.35fr .85fr; gap: 64px; margin-top: 60px; }
+.reading-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; margin-top: 60px; }
 .essay-list > .eyebrow { color: $muted; font-size: .65rem; padding-bottom: 12px; }
 .essay { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-block: 24px; border-bottom: 1px solid $line; }
 .essay:hover h3 { color: #efc0af; }
 .essay-meta { color: $muted; font-size: .7rem; margin-bottom: 9px; }
 .essay-meta span { margin-inline: 6px; opacity: .65; }
 .essay h3 { font-size: 1.65rem; line-height: 1.15; }
-.podcast-card { padding: 28px; background: rgba(83, 21, 25, .35); border: 1px solid $line; align-self: start; }
+.podcast-list { display: grid; gap: 16px; align-content: start; }
+.podcast-card { display: block; padding: 24px; background: rgba(83, 21, 25, .35); border: 1px solid $line; }
 .podcast-card:hover { background: rgba(97, 30, 33, .5); }
-.podcast-icon { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; border: 1px solid $line; border-radius: 50%; font-family: Arial, sans-serif; font-size: 1.5rem; padding-left: 2px; margin-bottom: 25px; }
 .podcast-card .eyebrow { color: $muted; font-size: .62rem; }
-.podcast-card h3 { font-size: 2.5rem; margin-top: 10px; }
-.podcast-card > p:not(.eyebrow) { color: $muted; font-size: .9rem; margin-top: 19px; }
-.podcast-card .text-link { margin-top: 25px; font-size: .8rem; }
+.podcast-card h3 { font-size: 1.8rem; line-height: 1.15; margin-top: 10px; }
+.podcast-meta { color: $muted; font-size: .75rem; margin-top: 10px; }
+.podcast-description { color: $muted; font-size: .9rem; margin-top: 12px; }
+.podcast-card .text-link { margin-top: 16px; font-size: .8rem; }
 .buy { text-align: center; padding-block: 100px 80px; border-top: 1px solid $line; background: linear-gradient(180deg, rgba(77, 8, 16, .25), rgba(82, 3, 17, .55)); }
 .buy h2 { font-size: clamp(3.7rem, 6vw, 5.5rem); margin-top: 22px; }
 .retailers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; }
@@ -148,7 +149,8 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .about { gap: 50px; grid-template-columns: .8fr 1.2fr; }
   .book-display { padding-inline: 12px; }
   .excerpt-feature { padding: 35px; gap: 35px; }
-  .reading-grid { gap: 35px; }
+  .reading-grid { grid-template-columns: 1fr; gap: 35px; }
+  .podcast-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 700px) {
   html { scroll-padding-top: 24px; }
@@ -188,7 +190,7 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .excerpt-copy h3 { font-size: 2.8rem; }
   .reading-grid { grid-template-columns: 1fr; gap: 34px; margin-top: 38px; }
   .essay { padding-block: 22px; }
-  .podcast-card { padding: 28px; }
+  .podcast-list { grid-template-columns: 1fr; }
   .buy { padding-block: 72px; }
   .retailers { grid-template-columns: 1fr; gap: 10px; }
   .retailer { padding: 18px 22px; }

@@ -91,9 +91,10 @@ content:
           - name: url
             label: Url
             type: string
-      - name: podcast
-        label: Podcast
+      - name: podcasts
+        label: Podcasts and audio
         type: object
+        list: true
         fields:
           - name: title
             label: Title
@@ -101,11 +102,20 @@ content:
           - name: label
             label: Label
             type: string
+          - name: date
+            label: Date (optional)
+            type: string
+          - name: duration
+            label: Duration (optional)
+            type: string
           - name: description
             label: Description
             type: text
           - name: url
             label: Url
+            type: string
+          - name: link_label
+            label: Listening link label
             type: string
       - name: retailers
         label: Retailers

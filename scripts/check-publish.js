@@ -36,7 +36,7 @@ for (const [, source] of html.matchAll(/(?:src|href)="(\/assets\/[^"?#]+)[^"]*"/
 }
 const book = YAML.parse(fs.readFileSync('_data/book.yml', 'utf8'));
 assert.equal(book.authors.length, 4);
-for (const item of [...book.retailers, ...book.reading, book.excerpt, book.podcast]) assert.equal(new URL(item.url).protocol, 'https:');
+for (const item of [...book.retailers, ...book.reading, book.excerpt, ...book.podcasts]) assert.equal(new URL(item.url).protocol, 'https:');
 assert(gzipSync(fs.readFileSync('_site/assets/css/main.css')).length < 20_000, 'CSS exceeded 20 KB gzip.');
 assert(gzipSync(fs.readFileSync('_site/assets/js/main.js')).length < 8_000, 'JavaScript exceeded 8 KB gzip.');
 console.log(`Publish boundary passed: ${files('_site').length} approved files; no PDFs, document embeds, or raw references.`);

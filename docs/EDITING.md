@@ -16,7 +16,7 @@ Most public copy lives in [`_data/book.yml`](../_data/book.yml). Keep it as plai
 | `praise[]` | Complete endorsements, reviewer names, and attribution lines |
 | `excerpt` | Featured CrimeReads link, headline, summary, and date |
 | `reading[]` | Three related Revealer essays |
-| `podcast` | Revealer episode link and supporting summary |
+| `podcasts[]` | Listening cards in display order, with source labels, summaries, URLs, and link labels; dates and durations are optional |
 | `retailers[]` | Store names, secondary labels, and purchase URLs |
 
 Preserve YAML indentation. Quote values containing punctuation such as `: `, and use the existing entries as the format reference. Run `npm test` after editing.
@@ -31,7 +31,9 @@ Keep endorsement wording, article and book titles, names, dates, and URLs faithf
 
 The intro, metadata description, and supporting summaries are assistant-authored. Apply the Humanizer skill, with constrained editing where appropriate, only to such prose. Keep changes concrete and restrained; do not introduce claims, ratings, bestseller status, or new availability promises. Humanization must not alter sourced material.
 
-The CrimeReads feature links to the published adapted excerpt. Do not replace that link with the private book file or reproduce interior manuscript text. The three Revealer essays and podcast are related coverage, not new book reviews.
+The CrimeReads feature links to the published adapted excerpt. Do not replace that link with the private book file or reproduce interior manuscript text. The three Revealer essays, Revealer podcast, and NPR segment are related coverage, not new book reviews.
+
+Keep the latest listening item first in `podcasts[]`. Each entry needs `title`, `label`, `description`, `url`, and `link_label`. Add `date` and `duration` only when verified; quote durations such as `"4:12"` in YAML. Use the source's actual program name and credit. Do not describe a segment as an author interview unless the source confirms it. Listening cards link directly to the publication and work without JavaScript.
 
 ## Praise format
 

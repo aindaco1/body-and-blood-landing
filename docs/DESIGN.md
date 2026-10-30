@@ -42,12 +42,17 @@ The quote and attribution formatting contract is in [Content editing](EDITING.md
 - Featured adapted excerpt: https://crimereads.com/rosemarys-grandbabies-how-a-new-wave-of-horror-changed-america/ (October 28, 2026).
 - Essay series: the three The Revealer links in `_data/book.yml`, originally published in 2022. These are related essays, not represented as new book reviews or excerpts.
 - Podcast: https://therevealer.org/the-revealer-podcast-episode-27-catholic-horror/ (July 26, 2022). Link out; never preload a third-party player.
+- NPR audio: https://www.npr.org/2026/10/30/nx-s1-6019382/why-scary-movies-keep-borrowing-ideas-from-religion (October 30, 2026). The source page identifies Deena Prichep, All Things Considered, and a 4:12 runtime. The card uses the exact headline and an original short summary of the page description; it makes no claim about book-author participation. Link to NPR rather than embedding or hosting the audio.
 - Retailer URLs were supplied by the owner; the publisher is the authority for book metadata. Prices are intentionally omitted.
 - The supplied Lindsey Sells Books listing was reviewed but omitted: it attributes a four-author book to one author and shows inconsistent ratings. It is not used as a source of praise.
 
 Praise cards contain all three full endorsements, supplied on the promotional page of the owner's reference file and checked against the public NYU Press listing. Kelly J. Baker's final sentence follows the public listing's “A necessary read” wording (the supplied promotional page says “A necessary book”). Quotes, names, and attribution have not been humanized. No interior manuscript content is published. The CrimeReads feature links to the adapted excerpt and uses an original short summary rather than reproducing the article.
 
 The Humanizer and Constrained Humanization Editing skills were applied only to assistant-authored website copy: metadata, the introduction, supporting summaries, and generic headings/link labels. Book and article titles, author names, dates, URLs, publisher facts, and endorsement wording remain sourced. [Content editing](EDITING.md#decisions-to-retain) records the owner's wording decisions and removed slogans.
+
+### Listening cards
+
+Keep CrimeReads as the main feature. Supporting audio follows in `podcasts[]` order, with NPR first. Above 1000 px, compact listening cards stack beside the essays. At 701–1000 px, they sit side by side below the essays; on phones, they stack in one column. Preserve full titles and summaries and let cards grow with their text. The cards are ordinary links, with no player, audio preload, or external script.
 
 ## Artwork
 

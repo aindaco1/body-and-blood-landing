@@ -46,11 +46,19 @@ reading:
     author: Kathleen Holscher
     label: Essay · Part III
     url: https://therevealer.org/catholic-gothic-horror-and-the-monsters-in-our-midst/
-podcast:
-  title: Catholic Horror
-  label: The Revealer Podcast · Episode 27
-  description: "Jack Lee Downey, Matthew J. Cressler, and Kathleen Holscher discuss how Catholic horror in films and literature connects to the Church’s own history."
-  url: https://therevealer.org/the-revealer-podcast-episode-27-catholic-horror/
+podcasts:
+  - title: Why scary movies keep borrowing ideas from religion
+    label: NPR · All Things Considered
+    date: October 30, 2026
+    duration: "4:12"
+    description: "Deena Prichep explores why horror filmmakers keep returning to religion."
+    url: https://www.npr.org/2026/10/30/nx-s1-6019382/why-scary-movies-keep-borrowing-ideas-from-religion
+    link_label: Listen on NPR
+  - title: Catholic Horror
+    label: The Revealer Podcast · Episode 27
+    description: "Jack Lee Downey, Matthew J. Cressler, and Kathleen Holscher discuss how Catholic horror in films and literature connects to the Church’s own history."
+    url: https://therevealer.org/the-revealer-podcast-episode-27-catholic-horror/
+    link_label: Listen to the episode
 retailers:
   - name: NYU Press
     detail: Buy from the publisher

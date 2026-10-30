@@ -51,6 +51,8 @@ Liquid renders content during the build. Links, navigation, purchase options, an
 
 Book JSON-LD uses the YAML title, subtitle, description, ISBN, publisher, and four authors. The browser title uses `_config.yml`. Some visual labels remain in templates; see [Content editing](EDITING.md) before renaming the book or changing credits.
 
+Listening cards render from the ordered `podcasts` array in `_data/book.yml`. The Pages CMS schema exposes the same list, and the publication guard checks every podcast URL. Dates and durations are optional. Audio stays on the source publication's page; no player or audio file loads on this site.
+
 ## Motion lifecycle
 
 The HTML initially loads `pool-still.webp`. After page load, JavaScript switches to the GIF only when motion is allowed, the user has not paused it, and the document is visible.
