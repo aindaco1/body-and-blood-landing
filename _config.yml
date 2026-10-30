@@ -1,0 +1,25 @@
+title: "Body and Blood: Catholic Horror in America"
+url: "https://bodyandbloodbook.com"
+baseurl: ""
+lang: en-US
+sass:
+  style: compressed
+  sass_dir: assets/css
+exclude:
+  - README.md
+  - AGENTS.md
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - node_modules
+  - vendor
+  - tests
+  - test-results
+  - playwright-report
+  - scripts
+  - docs
+  - tmp
+  - "*.pdf"
+  - "*.PDF"

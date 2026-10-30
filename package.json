@@ -1,0 +1,18 @@
+{
+  "name": "body-and-blood-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The book landing page for Body and Blood: Catholic Horror in America.",
+  "engines": { "node": ">=24.22.1 <25 || >=26.12.1 <27" },
+  "scripts": {
+    "dev": "bundle exec jekyll serve --host 127.0.0.1 --port 4186",
+    "build": "JEKYLL_ENV=production bundle exec jekyll build && node scripts/check-publish.js",
+    "test": "npm run build && playwright test",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.12.1",
+    "@playwright/test": "1.62.1",
+    "yaml": "2.9.0"
+  }
+}

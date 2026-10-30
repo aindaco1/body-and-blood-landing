@@ -1,0 +1,19 @@
+name: Verify book landing page
+description: Build and check the publication boundary, then run browser tests.
+runs:
+  using: composite
+  steps:
+    - uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b
+      with:
+        ruby-version: "3.3"
+        bundler-cache: true
+    - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+      with:
+        node-version: "24.22.1"
+        cache: npm
+    - run: npm ci
+      shell: bash
+    - run: npx playwright install --with-deps chromium
+      shell: bash
+    - run: npm test
+      shell: bash
