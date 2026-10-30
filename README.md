@@ -1,16 +1,32 @@
 # Body and Blood
 
-Landing page for **Body and Blood: Catholic Horror in America**, by Matthew J. Cressler, Jack Lee Downey, Kathleen Holscher, and Michael Pasquier (NYU Press).
+The landing page for **Body and Blood: Catholic Horror in America**, by Matthew J. Cressler, Jack Lee Downey, Kathleen Holscher, and Michael Pasquier (NYU Press).
 
-Site: https://bodyandbloodbook.com/
+- [Live site](https://bodyandbloodbook.com/)
+- [Public repository](https://github.com/aindaco1/body-and-blood-landing)
+- [Builds and deployments](https://github.com/aindaco1/body-and-blood-landing/actions)
 
-## Architecture
+This README is for someone editing, maintaining, or taking over the site. The project uses Jekyll, Liquid, SCSS, plain JavaScript, and GitHub Pages, following the architecture of `zema-landing`. It has no backend, analytics, forms, or external font service. Cloudflare manages DNS.
 
-Adapted from `zema-landing`: Jekyll + Liquid/HTML, compressed SCSS, framework-free JavaScript, self-hosted fonts, YAML content, Pages CMS configuration, Playwright/axe, and test-gated GitHub Pages deployment. Cloudflare provides domain DNS. No backend, analytics, font CDN, forms, or media-upload service.
+## Start here
 
-## Local development
+| Task | Guide |
+| --- | --- |
+| Find the right file or understand the build | [Architecture](docs/ARCHITECTURE.md) |
+| Edit copy, endorsements, or purchase links | [Content editing](docs/EDITING.md) |
+| Preserve the visual direction or replace artwork | [Design, sources, and media](docs/DESIGN.md) |
+| Run checks, deploy, troubleshoot, or roll back | [Operations](docs/OPERATIONS.md) |
+| Work as a coding agent | [Repository instructions](AGENTS.md) |
 
-Use Ruby 3.3 (CI) and patched Node 24.22.1+ or 26.12.1+.
+The full book PDF is a private reference and must remain outside this repository. Never copy, commit, upload, embed, or link it, its interior pages, or extracted manuscript text. Only the public cover, approved derivative artwork, and the three owner-requested promotional endorsements belong here. Documentation is excluded from the website build, but **everything committed to this repository is public on GitHub**.
+
+## Local setup
+
+The owner's working checkout is the `body-and-blood-landing` folder in iCloud Drive. Work in that checkout or a separate clone of this repository.
+
+Use Ruby 3.3 to match CI, Bundler, and Node 24.22.1+ on major 24 or 26.12.1+ on major 26. The exact supported ranges are in [package.json](package.json); CI versions are in the [verification action](.github/actions/verify-site/action.yml).
+
+From the repository root:
 
 ```sh
 bundle install
@@ -19,42 +35,23 @@ npx playwright install chromium
 npm run dev
 ```
 
-Preview: http://127.0.0.1:4186/
+Open [the local preview](http://127.0.0.1:4186/). The development server watches source files and rebuilds `_site`.
+
+Stop that server before running the production checks:
 
 ```sh
 npm test
 git diff --check
 ```
 
-`npm test` builds Jekyll, checks the publication boundary, and runs browser tests. `npm run test:browser` runs only the browser suite against an existing `_site` build.
+`npm test` builds the production site, checks what may be published, and runs eight browser tests. It starts its own static server on port 4187. An active Jekyll watcher can overwrite the production build with development URLs; see [the test procedure](docs/OPERATIONS.md#validate-a-change).
 
-## Source map
+## Working rules
 
-| Concern | Source |
-| --- | --- |
-| Public copy, authors, praise, reading and retailer links | `_data/book.yml` |
-| Page layout and sections | `index.html`, `_layouts/default.html` |
-| Colors, typography, responsive layout | `assets/css/main.scss` |
-| Decorative GIF loading and pause control | `assets/js/main.js` |
-| Artwork and font provenance | `docs/DESIGN.md` |
-| Publication boundary | `scripts/check-publish.js` |
-| Browser behavior and accessibility | `tests/e2e/site.spec.js` |
-| Domain and canonical URL | `CNAME`, `_config.yml` |
-| Editorial schema | `.pages.yml` |
-| Release | `.github/workflows/pages.yml` |
+Keep changes small and use the existing Liquid/YAML/CSS structure. Source content lives in [`_data/book.yml`](_data/book.yml); rendered output in `_site` is disposable. Never edit `_site` as the source of a change.
 
-## Publishing and rollback
+Preserve complete endorsements, their wording, the compact praise layout, and the footer's `Body + Blood` spelling. Editorial restrictions and removed slogans are recorded in [Content editing](docs/EDITING.md).
 
-Authorized pushes to `main` run the shared verification action, then upload **only `_site`** to GitHub Pages. GitHub Pages is configured for Actions builds. A custom domain is recorded in `CNAME`; Cloudflare DNS points the apex and `www` to GitHub Pages. Do not reuse Zema's domain, forms, credentials, or Cloudflare services.
+Pushes to `main` run checks and deploy automatically. A successful push alone does not establish that the live site changed: check the matching workflow and the live page. The [operations guide](docs/OPERATIONS.md) covers release verification and rollback.
 
-To roll back, revert the relevant commit and push `main`; the same verification gate runs before the previous site content is restored. Keep a prior valid commit available. A successful push is not proof of a successful Pages deployment—check the workflow and the live URL.
-
-The full book PDF is deliberately absent. It must never enter this repository, an upload, or the publication output. All PDF visual references remain outside the project. Public media consists only of the publisher's cover and its text-free atmospheric derivative.
-
-## Content editing
-
-Edit `_data/book.yml` directly or connect this repository in Pages CMS using the owner's GitHub account. The schema edits public content only and exposes no file uploader. The CMS configuration does not imply that an account connection has been completed.
-
-Do not invent blurbs, ratings, bestseller labels, or availability. Recheck publisher and retailer facts before changing them. Sources and intentional omissions are documented in `docs/DESIGN.md`.
-
-Automated axe checks supplement manual review. VoiceOver and physical-device testing remain useful release checks.
+When changing behavior, update its guide in the same commit. Keep sources and visual decisions in `DESIGN.md`, content contracts in `EDITING.md`, and release procedures in `OPERATIONS.md`.
