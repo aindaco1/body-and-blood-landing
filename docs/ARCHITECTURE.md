@@ -20,18 +20,18 @@ YAML content + Liquid templates + SCSS + static assets
 
 Cloudflare supplies DNS. GitHub Pages serves the site and its HTTPS certificate. There is no Worker, R2 bucket, server-side application, database, or checkout integration. Retailer links lead to external stores.
 
-The project follows Zema's architecture but is an independent repository. It does not import Zema or Dust Wave Platform, and releases do not require changes in either project. All fonts and page media are served from this repository.
+The project follows Zema's architecture but is an independent repository. It does not import Zema or Dust Wave Platform, and releases do not require changes in either project. All fonts, artwork, and the film poster are served from this repository. YouTube serves the film on request.
 
 ## Source map
 
 | File | Responsibility |
 | --- | --- |
-| [`_data/book.yml`](../_data/book.yml) | Public book metadata, authors, intro, praise, article/podcast summaries, retailers |
-| [`index.html`](../index.html) | Hero, about, praise, reading/listening, and purchase sections |
+| [`_data/book.yml`](../_data/book.yml) | Public book metadata, authors, intro, praise, article/podcast summaries, film credits, retailers |
+| [`index.html`](../index.html) | Hero, about, praise, reading/listening, film, and purchase sections |
 | [`_layouts/default.html`](../_layouts/default.html) | Page shell, background, navigation, footer, motion button |
 | [`_includes/head.html`](../_includes/head.html) | Metadata, canonical URL, social cards, Book JSON-LD, asset loading |
 | [`assets/css/main.scss`](../assets/css/main.scss) | Typography, color, layout, responsive rules, cursor, focus styles |
-| [`assets/js/main.js`](../assets/js/main.js) | Decorative background motion only |
+| [`assets/js/main.js`](../assets/js/main.js) | Decorative background motion and the film's Play control |
 | [`_config.yml`](../_config.yml) | Site URL, compressed SCSS, build exclusions |
 | [`.pages.yml`](../.pages.yml) | Pages CMS fields for editing the YAML file |
 | [`CNAME`](../CNAME), [`robots.txt`](../robots.txt), [`sitemap.xml`](../sitemap.xml) | Domain, crawling, and homepage discovery |
@@ -47,11 +47,13 @@ The `private: true` field in `package.json` prevents npm package publication. It
 
 ## Rendering contracts
 
-Liquid renders content during the build. Links, navigation, purchase options, and readable content work without JavaScript. Existing section targets are `#main`, `#about`, `#read`, and `#buy`. The praise heading has `id="praise-title"`; there is no `#praise` section target.
+Liquid renders content during the build. Links, navigation, purchase options, and readable content work without JavaScript. Existing section targets are `#main`, `#about`, `#read`, `#film`, and `#buy`. The praise heading has `id="praise-title"`; there is no `#praise` section target.
 
 Book JSON-LD uses the YAML title, subtitle, description, ISBN, publisher, and four authors. The browser title uses `_config.yml`. Some visual labels remain in templates; see [Content editing](EDITING.md) before renaming the book or changing credits.
 
 Listening cards render from the ordered `podcasts` array in `_data/book.yml`. The Pages CMS schema exposes the same list, and the publication guard checks every podcast URL. Dates and durations are optional. Audio stays on the source publication's page; no player or audio file loads on this site.
+
+The film initially renders a local poster, credits, and a direct YouTube watch link. Pressing Play creates one privacy-enhanced YouTube iframe and moves keyboard focus to it. The watch link remains available if the embed is blocked. The sound credits use native `details` and work without JavaScript.
 
 ## Motion lifecycle
 

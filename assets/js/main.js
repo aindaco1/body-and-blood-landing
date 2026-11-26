@@ -29,3 +29,19 @@
   if (document.readyState === 'complete') { ready = true; update(); }
   else window.addEventListener('load', () => { ready = true; update(); }, { once: true });
 })();
+
+(() => {
+  const play = document.querySelector('.film-play');
+  if (!play) return;
+  play.addEventListener('click', () => {
+    const player = document.createElement('iframe');
+    player.title = document.getElementById('film-title').textContent;
+    player.referrerPolicy = 'strict-origin-when-cross-origin';
+    player.allow = 'autoplay; encrypted-media; picture-in-picture';
+    player.allowFullscreen = true;
+    player.src = `https://www.youtube-nocookie.com/embed/${play.dataset.youtubeId}?autoplay=1&playsinline=1`;
+    play.parentElement.replaceChildren(player);
+    player.focus();
+  });
+  play.hidden = false;
+})();

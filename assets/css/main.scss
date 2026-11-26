@@ -16,7 +16,7 @@ a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button:not(:disabled), a { touch-action: manipulation; }
-a:focus-visible, button:focus-visible { outline: 2px solid #fff6e9; outline-offset: 6px; }
+a:focus-visible, button:focus-visible, summary:focus-visible, .film-player iframe:focus-visible { outline: 2px solid $paper; outline-offset: 6px; }
 img { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p, figure { margin: 0; }
 h2, h3 { font-family: 'Garamond', Georgia, serif; font-weight: 400; line-height: 1.04; text-wrap: balance; }
@@ -107,6 +107,24 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
 .podcast-meta { color: $muted; font-size: .75rem; margin-top: 10px; }
 .podcast-description { color: $muted; font-size: .9rem; margin-top: 12px; }
 .podcast-card .text-link { margin-top: 16px; font-size: .8rem; }
+.film { border-top: 1px solid $line; }
+.film .eyebrow a { text-decoration: underline; text-underline-offset: .25em; }
+.film-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 40px; }
+.film-player { position: relative; aspect-ratio: 16 / 9; background: #130505; }
+.film-player img, .film-player iframe { display: block; width: 100%; height: 100%; border: 0; }
+.film-play { position: absolute; inset: 0; width: 100%; border: 0; padding: clamp(14px, 3vw, 28px); background: transparent; }
+.film-play:not([hidden]) { display: flex; align-items: flex-end; }
+.film-play .button { gap: 12px; }
+.film-play:hover .button { background: #eed8c7; }
+.film-grid .text-link { margin-top: 14px; }
+.film-credits { margin: 0; font-size: .9rem; }
+.film-credits > div { display: grid; grid-template-columns: 8rem 1fr; gap: 12px; padding-block: 9px; border-top: 1px solid $line; break-inside: avoid; }
+.film-credits dt { color: $muted; }
+.film-credits dd { margin: 0; }
+.film-sounds { margin-top: 28px; border-block: 1px solid $line; }
+.film-sounds summary { width: fit-content; padding-block: 12px; font-size: .9rem; }
+.film-sounds ul { margin: 0 0 20px; padding-left: 1.2rem; columns: 2; column-gap: 3rem; color: $muted; font-size: .85rem; overflow-wrap: anywhere; }
+.film-sounds li { break-inside: avoid; padding-block: 4px; }
 .buy { text-align: center; padding-block: 100px 80px; border-top: 1px solid $line; background: linear-gradient(180deg, rgba(77, 8, 16, .25), rgba(82, 3, 17, .55)); }
 .buy h2 { font-size: clamp(3.7rem, 6vw, 5.5rem); margin-top: 22px; }
 .retailers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 42px; }
@@ -124,7 +142,7 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
 .motion-toggle[hidden] { display: none; }
 .motion-toggle:hover { background: #52191b; }
 @media (hover: hover) and (pointer: fine) {
-  body, a, button { cursor: url('../media/crucifix-cursor.svg') 15 3, auto; }
+  body, a, button, summary { cursor: url('../media/crucifix-cursor.svg') 15 3, auto; }
   input, textarea { cursor: text; }
 }
 @media (min-width: 1600px) { .atmosphere img { object-position: 50% 50%; } }
@@ -151,6 +169,8 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .excerpt-feature { padding: 35px; gap: 35px; }
   .reading-grid { grid-template-columns: 1fr; gap: 35px; }
   .podcast-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .film-grid { grid-template-columns: 1fr; gap: 26px; }
+  .film-credits { columns: 2; column-gap: 28px; }
 }
 @media (max-width: 700px) {
   html { scroll-padding-top: 24px; }
@@ -191,6 +211,8 @@ figcaption span { display: block; font-size: .73rem; color: $muted; margin-top: 
   .reading-grid { grid-template-columns: 1fr; gap: 34px; margin-top: 38px; }
   .essay { padding-block: 22px; }
   .podcast-list { grid-template-columns: 1fr; }
+  .film-credits, .film-sounds ul { columns: 1; }
+  .film-credits > div { grid-template-columns: minmax(6.5rem, .7fr) 1fr; }
   .buy { padding-block: 72px; }
   .retailers { grid-template-columns: 1fr; gap: 10px; }
   .retailer { padding: 18px 22px; }

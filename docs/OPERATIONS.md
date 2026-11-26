@@ -24,7 +24,7 @@ The static preview on port 4186 may remain open during tests. The Jekyll develop
 
 ### What the checks cover
 
-`npm test` runs a production Jekyll build, [`check-publish.js`](../scripts/check-publish.js), then eight Chromium tests. The tests cover main navigation/content, overflow at 320–1920 px, axe accessibility checks at phone and desktop sizes, pause/resume, reduced motion, Save-Data, navigation without JavaScript, keyboard skip navigation, and the cursor.
+`npm test` runs a production Jekyll build, [`check-publish.js`](../scripts/check-publish.js), then the Chromium suite. The tests cover main navigation/content, overflow at 320–1920 px, axe accessibility checks at phone and desktop sizes, pause/resume, reduced motion, Save-Data, navigation without JavaScript, keyboard skip navigation, and the cursor. The film test verifies that the page contacts YouTube only after Play and uses a stubbed player response. For a film release, also play the live video and check the direct watch link.
 
 `npm run build` omits browser tests. `npm run test:browser` assumes a current production `_site` already exists. Failures retain screenshots and traces under ignored test output directories. Automated checks do not replace quote/source review, visual inspection, VoiceOver, or Safari and physical-device testing.
 

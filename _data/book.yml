@@ -59,6 +59,47 @@ podcasts:
     description: "Jack Lee Downey, Matthew J. Cressler, and Kathleen Holscher discuss how Catholic horror in films and literature connects to the Church’s own history."
     url: https://therevealer.org/the-revealer-podcast-episode-27-catholic-horror/
     link_label: Listen to the episode
+film:
+  title: "Body + Blood: Official Book Trailer"
+  youtube_id: "-xy_MLrspjw"
+  production:
+    - name: Dust Wave
+      url: https://dustwave.xyz
+    - name: Phantasmagoria
+      url: https://phantasmagoria.xyz
+  credits:
+    - role: Directed & edited by
+      names: Luca Silver
+    - role: Starring
+      names: Josephine Indacochea, Frankie Holscher, Iggy Holscher
+    - role: Cinematographer
+      names: Nata Aguilar
+    - role: Sound designer
+      names: Luca Silver
+    - role: Music by
+      names: Luca Silver
+    - role: Producer
+      names: Alonso Indacochea
+    - role: Story by
+      names: Matthew Cressler
+    - role: Special thanks
+      names: Kathleen Holscher, Noah Tucker, Gary Shaw
+  sounds:
+    - Huge Thunder Crack [XY + MS] by -CASK
+    - 2015-11-20 wind and leaves in a forest.wav by tim.kahn
+    - Attic door creaking 2 by jymdavis
+    - Scream- woman- pain 3 by Valerie-Vivegnis
+    - screaming_woman_horror.mp3 by GabrielaUPF
+    - Horror scream by gss_13
+    - TF_flame-2.flac by copyc4t
+    - Wind at door howling 4.wav by Bosk1
+    - jesuslovesme.aif by vzykov
+    - Woman crying softly.wav by Legand569
+    - 1934 Mercedes Typewriter by doxent
+    - Hammering a nail by deleted_user_7146007
+    - Blood Gush by FlaxGod
+    - Large Anvil & Steel Hammer 4.wav by Benboncan
+    - Slamming door to garbage shed.wav by jakobhandersen
 retailers:
   - name: NYU Press
     detail: Buy from the publisher

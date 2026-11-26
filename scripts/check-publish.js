@@ -28,7 +28,7 @@ for (const file of files('_site')) {
   assert(fs.statSync(file).size < 8_000_000, `Oversized public asset: ${file}`);
 }
 const html = fs.readFileSync('_site/index.html', 'utf8');
-assert(!/<(?:iframe|object|embed)\b/i.test(html), 'No document or third-party embeds are allowed.');
+assert(!/<(?:iframe|object|embed)\b/i.test(html), 'The generated page must not contain an embed.');
 assert(!/\.pdf(?:["?#<\s]|$)/i.test(html), 'No PDF links are allowed.');
 assert(!/zema|formspree|googletagmanager/i.test(html), 'Template-specific integration leaked.');
 for (const [, source] of html.matchAll(/(?:src|href)="(\/assets\/[^"?#]+)[^"]*"/g)) {
@@ -36,7 +36,8 @@ for (const [, source] of html.matchAll(/(?:src|href)="(\/assets\/[^"?#]+)[^"]*"/
 }
 const book = YAML.parse(fs.readFileSync('_data/book.yml', 'utf8'));
 assert.equal(book.authors.length, 4);
-for (const item of [...book.retailers, ...book.reading, book.excerpt, ...book.podcasts]) assert.equal(new URL(item.url).protocol, 'https:');
+assert.match(book.film.youtube_id, /^[A-Za-z0-9_-]{11}$/, 'Use the 11-character YouTube film ID.');
+for (const item of [...book.retailers, ...book.reading, book.excerpt, ...book.podcasts, ...book.film.production]) assert.equal(new URL(item.url).protocol, 'https:');
 assert(gzipSync(fs.readFileSync('_site/assets/css/main.css')).length < 20_000, 'CSS exceeded 20 KB gzip.');
 assert(gzipSync(fs.readFileSync('_site/assets/js/main.js')).length < 8_000, 'JavaScript exceeded 8 KB gzip.');
 console.log(`Publish boundary passed: ${files('_site').length} approved files; no PDFs, document embeds, or raw references.`);
