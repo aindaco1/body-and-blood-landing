@@ -17,6 +17,7 @@ Most public copy lives in [`_data/book.yml`](../_data/book.yml). Keep it as plai
 | `excerpt` | Featured CrimeReads link, headline, summary, and date |
 | `reading[]` | Three related Revealer essays |
 | `podcasts[]` | Listening cards in display order, with source labels, summaries, URLs, and link labels; dates and durations are optional |
+| `film` | Film title, YouTube ID, production companies, cast and crew, and Freesound attributions |
 | `retailers[]` | Store names, secondary labels, and purchase URLs |
 
 Preserve YAML indentation. Quote values containing punctuation such as `: `, and use the existing entries as the format reference. Run `npm test` after editing.
@@ -34,6 +35,12 @@ The intro, metadata description, and supporting summaries are assistant-authored
 The CrimeReads feature links to the published adapted excerpt. Do not replace that link with the private book file or reproduce interior manuscript text. The three Revealer essays, Revealer podcast, and NPR segment are related coverage, not new book reviews.
 
 Keep the latest listening item first in `podcasts[]`. Each entry needs `title`, `label`, `description`, `url`, and `link_label`. Add `date` and `duration` only when verified; quote durations such as `"4:12"` in YAML. Use the source's actual program name and credit. Do not describe a segment as an author interview unless the source confirms it. Listening cards link directly to the publication and work without JavaScript.
+
+## Film
+
+Use the 11-character ID from the YouTube watch URL for `film.youtube_id`. Both playback options use that ID. If the film changes, replace `assets/media/film-still.webp` with a public 16:9 still from the new film.
+
+Keep the production companies in billing order. Each `credits` row pairs a role with the names as billed on screen. In particular, the story credit reads “Matthew Cressler.” Preserve the sound titles, filenames, and contributor handles in `sounds`, one attribution per entry. The page displays these under “Freesound attributions.”
 
 ## Praise format
 

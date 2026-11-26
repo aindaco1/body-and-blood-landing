@@ -1,5 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const { default: AxeBuilder } = require('@axe-core/playwright');
+const { readFileSync } = require('node:fs');
+const YAML = require('yaml');
+const { film: filmData } = YAML.parse(readFileSync('_data/book.yml', 'utf8'));
 
 test('readers can find the book, excerpt, praise, and all three retailers', async ({ page }) => {
   const errors = [];
@@ -26,11 +29,38 @@ test('layout fits small phones, tablets, and desktop without overflow', async ({
   for (const width of [320, 375, 390, 768, 1024, 1440, 1920]) {
     await page.setViewportSize({ width, height: 960 });
     await page.goto('/');
+    await page.locator('#film summary').click();
     await page.evaluate(() => document.fonts.ready);
     const metrics = await page.evaluate(() => ({ width: window.innerWidth, body: document.body.scrollWidth, document: document.documentElement.scrollWidth }));
     expect(metrics.body, `body at ${width}px`).toBeLessThanOrEqual(metrics.width);
     expect(metrics.document, `document at ${width}px`).toBeLessThanOrEqual(metrics.width);
   }
+});
+
+test('the film loads YouTube only after a reader presses Play', async ({ page }) => {
+  const external = [];
+  page.on('request', request => {
+    if (new URL(request.url()).hostname !== '127.0.0.1') external.push(request.url());
+  });
+  const embed = `https://www.youtube-nocookie.com/embed/${filmData.youtube_id}?autoplay=1&playsinline=1`;
+  await page.route(embed, route => route.fulfill({ contentType: 'text/html', body: '<title>Film player</title>' }));
+  await page.goto('/');
+  await page.getByRole('link', { name: 'Film', exact: true }).click();
+  const film = page.locator('#read + #film:has(+ #buy)');
+  await expect(film).toBeInViewport();
+  const poster = film.locator('.film-player img');
+  await expect.poll(() => poster.evaluate(img => img.naturalWidth)).toBe(1280);
+  await expect(film.locator('iframe')).toHaveCount(0);
+  expect(external).toEqual([]);
+  const play = film.getByRole('button', { name: 'Play film' });
+  await play.focus();
+  await page.keyboard.press('Enter');
+  const player = film.locator('iframe');
+  await expect(player).toHaveAttribute('src', embed);
+  await expect(player).toHaveAccessibleName(filmData.title);
+  await expect(player).toBeFocused();
+  await expect(film.getByRole('link', { name: 'Watch on YouTube' })).toBeVisible();
+  expect(external).toEqual([embed]);
 });
 
 test('WCAG 2.2 AA automated checks pass at desktop and phone sizes', async ({ page }) => {
@@ -83,6 +113,13 @@ test('content and purchase navigation work without JavaScript', async ({ browser
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:4187/');
+  await page.getByRole('link', { name: 'Film', exact: true }).click();
+  const film = page.locator('#film');
+  await expect(film.locator('iframe, button:visible')).toHaveCount(0);
+  await expect(film.getByRole('link', { name: 'Watch on YouTube' })).toHaveAttribute('href', `https://www.youtube.com/watch?v=${filmData.youtube_id}`);
+  await film.locator('summary').click();
+  await expect(film.getByRole('listitem')).toHaveText(filmData.sounds);
+  await expect(film.getByRole('listitem').last()).toBeVisible();
   await page.getByRole('link', { name: 'Get your copy' }).first().click();
   await expect(page.locator('#buy')).toBeInViewport();
   await expect(page.locator('.retailer').first()).toHaveAttribute('href', /nyupress.org/);

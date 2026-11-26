@@ -18,7 +18,7 @@ This README is for someone editing, maintaining, or taking over the site. The pr
 | Run checks, deploy, troubleshoot, or roll back | [Operations](docs/OPERATIONS.md) |
 | Work as a coding agent | [Repository instructions](AGENTS.md) |
 
-The full book PDF is a private reference and must remain outside this repository. Never copy, commit, upload, embed, or link it, its interior pages, or extracted manuscript text. Only the public cover, approved derivative artwork, and the three owner-requested promotional endorsements belong here. Documentation is excluded from the website build, but **everything committed to this repository is public on GitHub**.
+The full book PDF is a private reference and must remain outside this repository. Never copy, commit, upload, embed, or link it, its interior pages, or extracted manuscript text. Public promotional material includes the cover, approved derivative artwork, three owner-requested endorsements, and the film poster and credits. Documentation is excluded from the website build, but **everything committed to this repository is public on GitHub**.
 
 ## Local setup
 
@@ -44,7 +44,7 @@ npm test
 git diff --check
 ```
 
-`npm test` builds the production site, checks what may be published, and runs eight browser tests. It starts its own static server on port 4187. An active Jekyll watcher can overwrite the production build with development URLs; see [the test procedure](docs/OPERATIONS.md#validate-a-change).
+`npm test` builds the production site, checks what may be published, and runs the browser suite. It starts its own static server on port 4187. An active Jekyll watcher can overwrite the production build with development URLs; see [the test procedure](docs/OPERATIONS.md#validate-a-change).
 
 ## Working rules
 

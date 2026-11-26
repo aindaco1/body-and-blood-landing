@@ -6,7 +6,7 @@ For designers and maintainers preserving the site's visual direction. [Content e
 
 The book's cover establishes scarlet, deep burgundy, near-black, and ivory; its title uses widely tracked, delicate capitals. The interior title page supplies a restrained serif counterpart. Julius Sans One approximates the cover's lettering; EB Garamond supplies the literary text; Jost handles small labels and controls. These are open-license approximations, not extracted commercial fonts. All are self-hosted with their SIL Open Font License files.
 
-The short sequence borrows the clarity of https://jamesclear.com/atomic-habits: immediate purchase intent, a concise premise, praise cards, an excerpt, supporting reading/listening, and a final retailer choice. No copy or imagery from Atomic Habits is used.
+The short sequence borrows the clarity of https://jamesclear.com/atomic-habits: immediate purchase intent, a concise premise, praise cards, an excerpt, supporting reading/listening, the film, and a final retailer choice. No copy or imagery from Atomic Habits is used.
 
 ### Typography and color
 
@@ -55,6 +55,14 @@ The Humanizer and Constrained Humanization Editing skills were applied only to a
 Keep CrimeReads as the main feature. Supporting audio follows in `podcasts[]` order, with NPR first. Above 1000 px, compact listening cards stack beside the essays. At 701–1000 px, they sit side by side below the essays; on phones, they stack in one column. Preserve full titles and summaries and let cards grow with their text. The cards are ordinary links, with no player, audio preload, or external script.
 
 ## Artwork
+
+### Film section
+
+The section pairs a 16:9 still with the on-screen credits. The title uses EB Garamond. Production billing, controls, and credits use Jost in the same ivory and muted tones as the reading section. At 1000 px and below, the poster sits above the credits. The Freesound list opens below both.
+
+The owner supplied the trailer heading, production credit, and end-credit card. The local poster, `assets/media/film-still.webp`, shows the black-and-white freeze frame just before the first text appears, at 2:49 in the [Phantasmagoria trailer](https://www.youtube.com/watch?v=-xy_MLrspjw&t=169s).
+
+### Cover and background
 
 - `assets/media/book-cover.webp`: public NYU Press jacket, downloaded from `https://ingram-nyu.imgix.net/covers/9781479845859.jpg?w=1000&q=90`, optimized to 800 × 1200.
 - `assets/media/pool-still.webp`: built-in image-generation edit of the owner's attached cover screenshot. All lettering and the central plus were removed. The source book PDF was never passed to an image service.

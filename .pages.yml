@@ -117,6 +117,42 @@ content:
           - name: link_label
             label: Listening link label
             type: string
+      - name: film
+        label: Film
+        type: object
+        fields:
+          - name: title
+            label: Film title
+            type: string
+          - name: youtube_id
+            label: YouTube video ID
+            type: string
+          - name: production
+            label: Production companies
+            type: object
+            list: true
+            fields:
+              - name: name
+                label: Company
+                type: string
+              - name: url
+                label: Website
+                type: string
+          - name: credits
+            label: Cast and crew
+            type: object
+            list: true
+            fields:
+              - name: role
+                label: Role
+                type: string
+              - name: names
+                label: Credited names
+                type: string
+          - name: sounds
+            label: Freesound attributions
+            type: string
+            list: true
       - name: retailers
         label: Retailers
         type: object
